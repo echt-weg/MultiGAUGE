@@ -1,0 +1,16 @@
+Pin 1 	- GND
+Gehäuse	- GND
+Pin 15	+ 12V in
+Pin 8	+ 12V in
+
+
+Pin 14	+ 5V out (normalerweise leer)
+Pin 7	+ 5V out (normalerweise leer)
+Pin 2 	D10 (zweites Display nur Empfang)
+Pin 3 	A0	Tankgebersignal
+Pin 4 		Wassertemp
+Pin 5 		Öltemp
+Pin 6 		Öldruck
+Pin 7 		
+
+Pin 9 RST

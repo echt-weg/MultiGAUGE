@@ -18,35 +18,35 @@
 // Nur in diesem Bereich sind bei Nutzung der vorgesehenen Sensoren Anpassungen notwendig
 int qnh = 1013;                     // Startwert QNH
 char headername[] = "Main";         // Überschrift im Hauptmenü
-int tankvolumen = 45;               // Tankvolumen ganzzahlig in l - ausfliegbar
-int fuel_min_red = 30;              // Tankvolumen ganzzahlig roter Bereich in l ausfliegbar verbleibend
-int fuel_min_yellow = 70;           // Tankvolumen ganzzahlig gelber Bereich in l ausfliegbar verbleibend
+static const int tankvolumen = 45;               // Tankvolumen ganzzahlig in l - ausfliegbar
+static const int fuel_min_red = 30;              // Tankvolumen ganzzahlig roter Bereich in l ausfliegbar verbleibend
+static const int fuel_min_yellow = 70;           // Tankvolumen ganzzahlig gelber Bereich in l ausfliegbar verbleibend
 
-float voltage_min_red = 11.5;       // Untergrenze Bordspannung roter Bereich. Separierung mit Punkt statt Komma (float)
-float voltage_min_yellow = 12;      // Untergrenze Bordspannung gelber Bereich. Separierung mit Punkt statt Komma (float)
-float voltage_max_red = 14.5;       // Obergrenze Bordspannung roter Bereich. Separierung mit Punkt statt Komma (float)
-float voltage_max_yellow = 14;      // Obergrenze Bordspannung gelber Bereich. Separierung mit Punkt statt Komma (float)
+static const float voltage_min_red = 11.5;       // Untergrenze Bordspannung roter Bereich. Separierung mit Punkt statt Komma (float)
+static const float voltage_min_yellow = 12;      // Untergrenze Bordspannung gelber Bereich. Separierung mit Punkt statt Komma (float)
+static const float voltage_max_red = 14.5;       // Obergrenze Bordspannung roter Bereich. Separierung mit Punkt statt Komma (float)
+static const float voltage_max_yellow = 14;      // Obergrenze Bordspannung gelber Bereich. Separierung mit Punkt statt Komma (float)
 
-int wtemp_min_red = 20;             // Untergrenze Wassertemperatur roter Bereich in °C ganzzahlig.
-int wtemp_min_yellow = 40;          // Untergrenze Wassertemperatur gelber Bereich in °C ganzzahlig.
-int wtemp_max_red = 110;            // Obergrenze Wassertemperatur roter Bereich in °C ganzzahlig.
-int wtemp_max_yellow = 90;          // Obergrenze Wassertemperatur gelber Bereich in °C ganzzahlig.
+static const int wtemp_min_red = 20;             // Untergrenze Wassertemperatur roter Bereich in °C ganzzahlig.
+static const int wtemp_min_yellow = 40;          // Untergrenze Wassertemperatur gelber Bereich in °C ganzzahlig.
+static const int wtemp_max_red = 110;            // Obergrenze Wassertemperatur roter Bereich in °C ganzzahlig.
+static const int wtemp_max_yellow = 90;          // Obergrenze Wassertemperatur gelber Bereich in °C ganzzahlig.
 
-int oeltemp_min_red = 45;           // Untergrenze Öltemperatur roter Bereich in °C ganzzahlig.
-int oeltemp_min_yellow = 80;        // Untergrenze Öltemperatur gelber Bereich in °C ganzzahlig.
-int oeltemp_max_red = 110;          // Obergrenze Öltemperatur roter Bereich in °C ganzzahlig.
-int oeltemp_max_yellow = 95;        // Obergrenze Öltemperatur gelber Bereich in °C ganzzahlig.
+static const int oeltemp_min_red = 45;           // Untergrenze Öltemperatur roter Bereich in °C ganzzahlig.
+static const int oeltemp_min_yellow = 80;        // Untergrenze Öltemperatur gelber Bereich in °C ganzzahlig.
+static const int oeltemp_max_red = 110;          // Obergrenze Öltemperatur roter Bereich in °C ganzzahlig.
+static const int oeltemp_max_yellow = 95;        // Obergrenze Öltemperatur gelber Bereich in °C ganzzahlig.
 
-float oelpress_min_red = 1.5;       // Untergrenze Öldruck roter Bereich in °C. Separierung mit Punkt statt Komma (float)
-float oelpress_min_yellow = 2;      // Untergrenze Öldruck gelber Bereich in °C. Separierung mit Punkt statt Komma (float)
-float oelpress_max_red = 4;         // Obergrenze Öldruck roter Bereich in °C. Separierung mit Punkt statt Komma (float)
-float oelpress_max_yellow = 3;      // Obergrenze Öldruck gelber Bereich in °C. Separierung mit Punkt statt Komma (float)
+static const float oelpress_min_red = 1.5;       // Untergrenze Öldruck roter Bereich in °C. Separierung mit Punkt statt Komma (float)
+static const float oelpress_min_yellow = 2;      // Untergrenze Öldruck gelber Bereich in °C. Separierung mit Punkt statt Komma (float)
+static const float oelpress_max_red = 4;         // Obergrenze Öldruck roter Bereich in °C. Separierung mit Punkt statt Komma (float)
+static const float oelpress_max_yellow = 3;      // Obergrenze Öldruck gelber Bereich in °C. Separierung mit Punkt statt Komma (float)
 
 
 // Technische Parameter für Implementierug und Einbau sowie Tests (Anpassung bei Abweichung vom Std notwendig)
-float voltagemultiplier = 15;        // Eingangsmultiplikator zur Spannung auf Basis Maximum 5V (abhängig von Widerstandskombination). Separierung mit Punkt statt Komma (float)
-float fuelmultiplier = 4.35;         // Eingangsmultiplikator zur Benzinanzeige (abhängig von Widerstandskombination und verbautem Geber). Separierung mit Punkt statt Komma (float)
-int fuelcutter = 1000;               // Eingangsabzug eines 1023er Signals zur Benzinanzeige (abhängig von Widerstandskombination und verbautem Geber). Ganzzahlig
+static const float voltagemultiplier = 15;        // Eingangsmultiplikator zur Spannung auf Basis Maximum 5V (abhängig von Widerstandskombination). Separierung mit Punkt statt Komma (float)
+static const float fuelmultiplier = 4.35;         // Eingangsmultiplikator zur Benzinanzeige (abhängig von Widerstandskombination und verbautem Geber). Separierung mit Punkt statt Komma (float)
+static const int fuelcutter = 1000;               // Eingangsabzug eines 1023er Signals zur Benzinanzeige (abhängig von Widerstandskombination und verbautem Geber). Ganzzahlig
 
 
 // Sonstige Variablen, nicht zur Anpassung für die Konfiguration des Flugzeugs
@@ -58,7 +58,7 @@ int gaugetxtdesc = 9;
 int gaugetxtval = 10;
 int refreshcounter = 0;
 int dscounter = 1;
-int startpagenumber=9;
+int startpagenumber=1;
 
 
 
@@ -66,11 +66,12 @@ int startpagenumber=9;
 BMP280 bmp280;
 SoftwareSerial nextionSerial(10, 11); // RX, TX
 Nextion nex(nextionSerial);
-NextionPicture qnhdown(nex, 3, 4, "p2");
-NextionPicture qnhup(nex, 3, 5, "p3");
-NextionPicture usbdebugger(nex, 5, 6, "p2");
-NextionPicture startpageleft(nex, 5, 8, "p3");
-NextionPicture startpageright(nex, 5, 9, "p4");
+NextionPicture qnhdown(nex, 4, 4, "p2");
+NextionPicture qnhup(nex, 4, 5, "p3");
+NextionPicture usbdebugger(nex, 7, 6, "p2");
+NextionPicture spageleft(nex, 7, 8, "p3");
+NextionPicture spageright(nex, 7, 9, "p4");
+
 
 // Funktion zum Senden der Daten an das Display
 void senddata(char message[], int method)
@@ -84,9 +85,9 @@ void senddata(char message[], int method)
   }
   if (method == 2)
   {
-    nextionSerial.print("\"");
+    nextionSerial.print(F("\""));
     nextionSerial.print(message);
-    nextionSerial.print("\"");
+    nextionSerial.print(F("\""));
     nextionSerial.write(0xff);
     nextionSerial.write(0xff);
     nextionSerial.write(0xff);
@@ -99,7 +100,7 @@ void debuglog(String message)
 {
   if (logdebuglevel > 0)
   {
-    Serial.print(">>");
+    Serial.print(F(">>"));
     Serial.println(message);
   }
 }
@@ -108,39 +109,35 @@ void debuglog(String message)
 // Einmalige Initalisierung beim Start
 void setup()
 {
+  
   // Starten der seriellen Verbindung
   Serial.begin(57600);
   nextionSerial.begin(57600);
   nex.init();
-
   // Auslesen des EEPROM und entsprechendes Setzen der Variablen
   if (EEPROM.read(0) == 100)
   {
     logdebuglevel = 1;
-    Serial.print("EEPROM-Daten auf Adresse 0:");
+    Serial.print(F("EEPROM-Daten auf Adresse 0:"));
     Serial.print(EEPROM.read(0));
-    Serial.println(" haben das Logging aktiviert");
+    Serial.println(F(" haben das Logging aktiviert"));
   }
   else
   {
     logdebuglevel = 0;
   }
-  delay(20);
+  delay(50);
   // Auslesen des EEPROM und entsprechendes Setzen der Variablen
-  if (EEPROM.read(1) < 10)
+  int eepromstartpagenumber=EEPROM.read(1);
+  delay(50);
+  if (eepromstartpagenumber <= 9)
   {
-    delay(20);
-
-    Serial.print("EEPROM-Daten auf Adresse 1:");
-   Serial.print(EEPROM.read(1));
-     delay(20);
-
-  startpagenumber=EEPROM.read(1);
+   startpagenumber=eepromstartpagenumber;
+   Serial.print(F("EEPROM-Daten auf Adresse 1:"));
+   Serial.print(startpagenumber);
   }
 
-
-  
-
+ 
   debuglog("Suche BMP280: ");
   if (bmp280.initialize())
   {
@@ -157,33 +154,34 @@ void setup()
   bmp280.triggerMeasurement();
   delay(400);
   // Manuelle Initalisierung der ersten Seite und setzen der Parameter
-  nextionSerial.print("bauds=57600");
+  nextionSerial.print(F("bauds=57600"));
   nextionSerial.write(0xff);
   nextionSerial.write(0xff);
   nextionSerial.write(0xff);
   delay(7);
-  nextionSerial.print("bauds=57600");
+  nextionSerial.print(F("bauds=57600"));
   nextionSerial.write(0xff);
   nextionSerial.write(0xff);
   nextionSerial.write(0xff);
   delay(7);
-  nextionSerial.print("bkcmd=0");
+  nextionSerial.print(F("bkcmd=0"));
   nextionSerial.write(0xff);
   nextionSerial.write(0xff);
   nextionSerial.write(0xff);
   delay(7);
-  nextionSerial.print("page ");
+  nextionSerial.print(F("page "));
   nextionSerial.print(startpagenumber);
   nextionSerial.write(0xff);
   nextionSerial.write(0xff);
   nextionSerial.write(0xff);
   delay(50);
-  // Ergänzen der jeweiligen Callbacks für Aktionsbuttons
+  // Ergänzen der jeweiligen Callbacks für Aktionsbuttons, Probleme bei mehreren Callbacks
   qnhdown.attachCallback(&cbdown);
   qnhup.attachCallback(&cbup);
   usbdebugger.attachCallback(&cbdebug);
- // startpageleft.attachCallback(&cbstartpageleft);
- // startpageright.attachCallback(&cbstartpageright);
+  spageleft.attachCallback(&cbspageleft);
+  spageright.attachCallback(&cbspageright);
+
 }
 
 
@@ -195,52 +193,68 @@ void Datasend(int numbertodo)
   if (numbertodo == 1)
   {
     // Senden deS Headers
-    nextionSerial.print("boot.header.txt=\"");
+    nextionSerial.print(F("boot.header.txt=\""));
     nextionSerial.print(headername);
-    nextionSerial.print("\"");
+    nextionSerial.print(F("\""));
     nextionSerial.write(0xff);
     nextionSerial.write(0xff);
     nextionSerial.write(0xff);
 
     // Senden der Startseitenbeschreibung
-    nextionSerial.print("boot.setupstartpage.txt=\"");
+    nextionSerial.print(F("boot.setupstartpage.txt=\""));
     if (startpagenumber==1)
     {
-       nextionSerial.print("Menu");
+       nextionSerial.print(F("Warning"));
     }
     if (startpagenumber==2)
     {
-       nextionSerial.print("Temp");
+       nextionSerial.print(F("Menu"));
     }
     if (startpagenumber==3)
     {
-       nextionSerial.print("Altimeter");
+       nextionSerial.print(F("Debug"));
     }
     if (startpagenumber==4)
     {
-       nextionSerial.print("Checklist");
+       nextionSerial.print(F("Altimeter"));
     }
     if (startpagenumber==5)
     {
-       nextionSerial.print("Setup");
+       nextionSerial.print(F("Checklist"));
     }
     if (startpagenumber==6)
     {
-       nextionSerial.print("Gauges");
+       nextionSerial.print(F("Temp"));
     }
     if (startpagenumber==7)
     {
-       nextionSerial.print("About");
+       nextionSerial.print(F("Setup"));
     }
     if (startpagenumber==8)
     {
-       nextionSerial.print("Debug");
+       nextionSerial.print(F("Abput"));
     }
     if (startpagenumber==9)
     {
-       nextionSerial.print("Warning");
+       nextionSerial.print(F("Gauges"));
     }
-    nextionSerial.print("\"");
+    if (startpagenumber==10)
+    {
+       nextionSerial.print(F("Gauges-Volt"));
+    }    
+    if (startpagenumber==11)
+    {
+       nextionSerial.print(F("Gauges-Fuel"));
+    }   
+    if (startpagenumber==12)
+    {
+       nextionSerial.print(F("Gauges-Waster"));
+    }
+    if (startpagenumber==12)
+    {
+       nextionSerial.print(F("Gauges-Oil"));
+    }
+    nextionSerial.print(F("\""));
     nextionSerial.write(0xff);
     nextionSerial.write(0xff);
     nextionSerial.write(0xff);
@@ -249,7 +263,7 @@ void Datasend(int numbertodo)
     
 
     // Senden des Logmodes
-    nextionSerial.print("boot.setuplogging.val=");
+    nextionSerial.print(F("boot.setuplogging.val="));
     nextionSerial.print(logdebuglevel);
     nextionSerial.write(0xff);
     nextionSerial.write(0xff);
@@ -257,11 +271,11 @@ void Datasend(int numbertodo)
 
 
     //Senden von Versions- und Produktdaten
-    nextionSerial.print("boot.swname.txt=\"MultiGAUGE\"");
+    nextionSerial.print(F("boot.swname.txt=\"MultiGAUGE\""));
     nextionSerial.write(0xff);
     nextionSerial.write(0xff);
     nextionSerial.write(0xff);
-    nextionSerial.print("boot.swver.txt=\"SW-Version 0.1.1\"");
+    nextionSerial.print(F("boot.swver.txt=\"SW-Version 0.1.1\""));
     nextionSerial.write(0xff);
     nextionSerial.write(0xff);
     nextionSerial.write(0xff);
@@ -292,18 +306,18 @@ void Datasend(int numbertodo)
     int flightlevel = (1013 - qfe) * 30 / 100;
     int altitude = (qnh - qfe) * 30;
     // Senden der aktuellen Temperatur
-    nextionSerial.print("boot.temp.txt=\"");
+    nextionSerial.print(F("boot.temp.txt=\""));
     nextionSerial.print(temperature);
-    nextionSerial.print("\"");
+    nextionSerial.print(F("\""));
     nextionSerial.write(0xff);
     nextionSerial.write(0xff);
     nextionSerial.write(0xff);
 
 
     // Senden der aktuellen Temperatur lesbar
-    nextionSerial.print("boot.temphuman.txt=\"");
+    nextionSerial.print(F("boot.temphuman.txt=\""));
     nextionSerial.print(temperature);
-    nextionSerial.print("C\"");
+    nextionSerial.print(F("C\""));
     nextionSerial.write(0xff);
     nextionSerial.write(0xff);
     nextionSerial.write(0xff);
@@ -416,18 +430,18 @@ void Datasend(int numbertodo)
       voltagecolor = 63488;
     }
     // Senden der aktuellen Spannung
-    nextionSerial.print("boot.voltage.txt=\"");
+    nextionSerial.print(F("boot.voltage.txt=\""));
     nextionSerial.print(voltscale);
-    nextionSerial.print("\"");
+    nextionSerial.print(F("\""));
     nextionSerial.write(0xff);
     nextionSerial.write(0xff);
     nextionSerial.write(0xff);
 
 
     // Senden der aktuellen Spannung lesbar
-    nextionSerial.print("boot.voltagehuman.txt=\"");
+    nextionSerial.print(F("boot.voltagehuman.txt=\""));
     nextionSerial.print(voltscale);
-    nextionSerial.print("V\"");
+    nextionSerial.print(F("V\""));
     nextionSerial.write(0xff);
     nextionSerial.write(0xff);
     nextionSerial.write(0xff);
@@ -639,33 +653,33 @@ void Datasend(int numbertodo)
 }
 
 
-// Callback startpageleft
-void cbstartpageleft(NextionEventType type, INextionTouchable *widget)
+// Callback spageleft
+void cbspageleft(NextionEventType type, INextionTouchable *widget)
 {
   if (type == NEX_EVENT_PUSH)
   {
-    if (startpagenumber>0)
+    if (startpagenumber>1)
     {
       startpagenumber=startpagenumber-1;
       Datasend(1);
-      Serial.println("Neue Startseite konfiguriert");
-      //EEPROM.write(1, startpagenumber);
+      Serial.println(F("Neue Startseite konfiguriert"));
+      EEPROM.write(1, startpagenumber);
       delay(50);
     }
   }
 }
 
-// Callback startpageright
-void cbstartpageright(NextionEventType type, INextionTouchable *widget)
+// Callback spageright
+void cbspageright(NextionEventType type, INextionTouchable *widget)
 {
   if (type == NEX_EVENT_PUSH)
   {
-    if (startpagenumber<10)
+    if (startpagenumber<12)
     {
      startpagenumber=startpagenumber+1;
      Datasend(1);
-     Serial.println("Neue Startseite konfiguriert");
-    // EEPROM.write(1, startpagenumber);
+     Serial.println(F("Neue Startseite konfiguriert"));
+     EEPROM.write(1, startpagenumber);
      delay(50);
   }
   }
